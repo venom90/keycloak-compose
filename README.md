@@ -11,7 +11,7 @@ This Docker Compose setup initializes a Keycloak instance integrated with a Post
 ## Usage:
 Run the following command your terminal (test on Mac)
 ```bash
-keycloak-compose
+make keycloak-compose
 ```
 
 After successful initialization, Keycloak will be accessible on http://localhost:8083

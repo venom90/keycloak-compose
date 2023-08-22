@@ -14,4 +14,4 @@ Clone this repo on your machine and run the following command on your terminal (
 make keycloak-compose
 ```
 
-After successful initialization, Keycloak will be accessible on http://localhost:8083
+After successful initialization, Keycloak will be accessible on http://localhost:8083 and login with username admin, password admin. You can change the variables as per your need. For more details on Keycloak configuration see [All Configuration](https://www.keycloak.org/server/all-config)

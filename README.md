@@ -9,7 +9,7 @@ This Docker Compose setup initializes a Keycloak instance integrated with a Post
 *Network Isolation:* Both services (Keycloak and PostgreSQL) communicate over a custom bridge network named keycloak_network, ensuring network isolation from other containers.
 
 ## Usage:
-Run the following command your terminal (test on Mac)
+Clone this repo on your machine and run the following command on your terminal (tested on Mac M1 Pro)
 ```bash
 make keycloak-compose
 ```

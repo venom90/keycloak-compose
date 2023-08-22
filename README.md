@@ -1,5 +1,11 @@
 # Keycloak with PostgreSQL Docker Compose Setup
 
+## Problem Statement
+The docker command given on official keycloak website works but data is not persisted.
+```
+docker run -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:22.0.1 start-dev
+```
+
 This Docker Compose setup initializes a Keycloak instance integrated with a PostgreSQL database. It features:
 
 **Keycloak:** Using the image from quay.io/keycloak/keycloak:22.0.1, it's configured to run in development mode and to connect to a PostgreSQL database.

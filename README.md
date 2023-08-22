@@ -1,3 +1,5 @@
+*Note: Recommended only for local development. Not for production use*
+
 ## Problem Statement
 The docker command given on official keycloak website works but data is not persisted.
 ```

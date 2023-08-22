@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:22.0.1
+    command: ["start-dev"]
+    environment:
+      - KEYCLOAK_ADMIN=${KEYCLOAK_ADMIN}
+      - KEYCLOAK_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD}
+      - KC_DB=postgres
+      - KC_DB_URL_DATABASE=keycloak
+      - KC_DB_URL_PORT=5432
+      - KC_DB_URL_HOST=keycloakdb
+      - KC_DB_USERNAME=${KC_DB_USERNAME}
+      - KC_DB_PASSWORD=${KC_DB_PASSWORD}
+    ports:
+      - 8083:8080
+    depends_on:
+      - keycloakdb
+    networks:
+      - keycloak_network
+
+  keycloakdb:
+    image: postgres:latest
+    volumes:
+      - keycloakpgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=keycloak
+      - POSTGRES_USER=${KC_DB_USERNAME}
+      - POSTGRES_PASSWORD=${KC_DB_PASSWORD}
+    networks:
+      - keycloak_network
+
+volumes:
+  keycloakpgdata:
+
+networks:
+  keycloak_network:
+    driver: bridge
